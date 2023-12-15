@@ -6,36 +6,42 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'proyecto0';
-  constructor(){
-    this.temporizador();
-  }
-   iniciar(ini:HTMLButtonElement, par:HTMLButtonElement){
-    console.log("boton iniciar: "+ini);
-    console.log("boton parar: "+ par)
-    ini.disabled=true;
-    par.disabled=false;
-    this.temporizador();
-  }
-  parar(par:HTMLButtonElement, ini:HTMLButtonElement){
-    console.log("boton iniciar: "+par);
-    console.log("boton parar: "+ ini);
-    ini.disabled=false;
-    par.disabled=true;
-    clearInterval(this.temp);
-  }
-  temp:NodeJS.Timeout | undefined;
-  horas:number=0;
-  minutos:number=0;
-  segundos:number=0;
-  milisegundos:number=0;
-  temporizador(){
-    this.temp=setInterval(()=>{
-        this.horas=new Date().getHours();
-        this.minutos=new Date().getMinutes();
-        this.segundos=new Date().getSeconds();
-        this.milisegundos=new Date().getMilliseconds();
-    },100)
-  }
+  title = 'Euroconversor';
+  euros:number=0;
+  yenes:number=0;
+  dolares:number=0;
+  libras:number=0;
+  d_l:number=1.10;
+  d_e:number=1.08;
+  d_y:number=123.12;
 
+  e_l:number=
+  e_y:number=
+  e_d:number=
+
+  l_y:number=
+  l_e:number=
+  l_d:number=
+
+  actualizarDolares(){
+    this.euros=this.dolares*this.d_e;
+    this.yenes=this.dolares*this.d_y;
+    this.libras=this.dolares*this.d_l;
+
+  }
+  actualizarLibras(){
+
+  }
+  actualizarYenes(){
+
+  }
+  actualizarEuros(){
+
+  }
+  limpiar(){
+ this.dolares=0;
+ this.euros=0;
+ this.libras=0;
+ this.yenes=0;
+  }
 }
